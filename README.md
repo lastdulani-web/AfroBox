@@ -11,7 +11,7 @@ AfroBox/
 ├── index.html              app shell, splash, icon sprite
 ├── manifest.webmanifest    install info (name, icons, colours)
 ├── sw.js                   service worker (offline app shell)
-├── css/styles.css          obsidian + glass styling
+├── css/styles.css          onyx + crimson glass styling
 ├── js/app.js               UI, import, library, tabs
 ├── js/player.js            queue, shuffle, repeat, MediaSession
 ├── js/db.js                IndexedDB (tracks + audio blobs)

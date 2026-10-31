@@ -1,11 +1,11 @@
 // AfroBox service worker: cache the app shell so the app opens fully offline.
 // Bump VERSION whenever you change any file, so phones pick up the update.
-const VERSION = 'afrobox-v1';
+const VERSION = 'afrobox-v2';
 const ASSETS = [
   './', 'index.html', 'manifest.webmanifest',
   'css/styles.css',
   'js/app.js', 'js/db.js', 'js/meta.js', 'js/player.js',
-  'assets/logo-full.png', 'assets/wordmark.png',
+  'assets/logo-full.png', 'assets/wordmark.png', 'assets/disc.png',
   'icons/icon-192.png', 'icons/icon-512.png', 'icons/icon-maskable-512.png', 'icons/apple-touch-icon.png'
 ];
 
