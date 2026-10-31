@@ -189,7 +189,7 @@ export function clearAll() {
 /* ---------- MediaSession ---------- */
 function updateSession(t) {
   if (!('mediaSession' in navigator)) return;
-  const art = coverURL(t) || new URL('icons/icon-512.png', document.baseURI).href;
+  const art = coverURL(t) || new URL('icons/icon-512-v2.png', document.baseURI).href;
   navigator.mediaSession.metadata = new MediaMetadata({
     title: t.title,
     artist: t.artist || 'Unknown artist',
