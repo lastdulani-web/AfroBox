@@ -1,6 +1,6 @@
 // AfroBox service worker: cache the app shell so the app opens fully offline.
 // Bump VERSION whenever you change any file, so phones pick up the update.
-const VERSION = 'afrobox-v5';
+const VERSION = 'afrobox-v6';
 const ASSETS = [
   './', 'index.html', 'manifest.webmanifest',
   'css/styles.css',

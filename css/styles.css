@@ -61,7 +61,7 @@ ul,ol{list-style:none}
 @keyframes splash-in{from{opacity:0;transform:translateY(14px) scale(.96)}to{opacity:1;transform:none}}
 
 /* App frame */
-#app{position:relative;z-index:1;height:100%;height:100dvh;display:flex;flex-direction:column;max-width:560px;margin:0 auto}
+#app{position:fixed;top:0;bottom:0;left:0;right:0;width:100%;z-index:1;display:flex;flex-direction:column;max-width:560px;margin:0 auto}
 .top{flex:none;padding:calc(var(--safe-t) + 14px) 22px 6px;display:flex;align-items:center}
 .brand{display:inline-flex;align-items:center;padding:9px 20px;border-radius:28px;background:var(--cream);box-shadow:0 0 0 1px rgba(246,236,221,.35),0 0 22px rgba(230,57,70,.50),0 0 56px rgba(230,57,70,.28),inset 0 -2px 0 rgba(0,0,0,.06)}
 .wordmark{height:24px;width:auto;display:block}
@@ -71,7 +71,7 @@ ul,ol{list-style:none}
 
 /* Now Playing */
 .np{min-height:100%;display:flex;flex-direction:column;justify-content:space-evenly;gap:14px;padding:6px 24px 12px}
-.art{width:min(100%,44dvh,max(170px,calc(100dvh - 420px)));aspect-ratio:1;margin:0 auto;padding:7px;border-radius:32px}
+.art{width:min(100%,44dvh,max(170px,calc(100dvh - 440px - var(--safe-t) - var(--safe-b))));aspect-ratio:1;margin:0 auto;padding:7px;border-radius:32px}
 .art img{width:100%;height:100%;object-fit:cover;border-radius:25px;display:block;background:#101010}
 .art img.ph{object-fit:cover}
 .titles{text-align:center;min-width:0}
