@@ -236,9 +236,6 @@ function renderQueueState() {
   rep.classList.toggle('on', P.S.repeat !== 'off');
   rep.querySelector('use').setAttribute('href', P.S.repeat === 'one' ? '#i-repeat1' : '#i-repeat');
   rep.setAttribute('aria-label', `Repeat: ${P.S.repeat}`);
-  const left = P.S.queue.length - P.S.idx - 1;
-  $('#queueLabel').textContent = P.S.queue.length && P.S.idx >= 0 ? `Up next · ${left}` : 'Up next';
-  if ($('#queueSheet').open) renderQueueSheet();
 }
 
 P.on('track', renderTrack);
@@ -276,24 +273,8 @@ if (P.volumeSupported) {
   $('#volNote').hidden = false;
 }
 
-/* queue sheet */
-function renderQueueSheet() {
-  $('#queueList').innerHTML = P.S.queue.map((id, i) => {
-    const t = P.S.map.get(id);
-    if (!t) return '';
-    return `<li class="row ${i === P.S.idx ? 'current' : ''}" data-q="${i}">
-      <button class="row-main"><span class="thumb">${thumbHTML(t)}</span>
-      <span class="meta"><b>${esc(t.title)}</b><i>${esc(t.artist || 'Unknown artist')}</i></span>
-      <span class="tail"><span class="dur">${fmtTime(t.duration)}</span></span></button></li>`;
-  }).join('') || '<li class="empty"><p>Nothing queued yet. Pick a song in your Library.</p></li>';
-}
-$('#btnQueue').addEventListener('click', () => { renderQueueSheet(); $('#queueSheet').showModal(); });
-$('#queueClose').addEventListener('click', () => $('#queueSheet').close());
-$('#queueList').addEventListener('click', (e) => {
-  const row = e.target.closest('[data-q]');
-  if (row) { P.jumpTo(+row.dataset.q); $('#queueSheet').close(); }
-});
-['queueSheet', 'confirm'].forEach((id) => $(`#${id}`).addEventListener('click', (e) => { if (e.target.id === id) e.target.close(); }));
+/* close the confirm dialog when the backdrop is clicked */
+$('#confirm').addEventListener('click', (e) => { if (e.target.id === 'confirm') e.target.close(); });
 
 /* desktop keyboard: space = play/pause */
 document.addEventListener('keydown', (e) => {

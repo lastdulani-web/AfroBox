@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>AfroBox</title>
 <meta name="description" content="AfroBox: a minimal offline music player for your own audio collection.">
-<meta name="theme-color" content="#161616">
+<meta name="theme-color" content="#0d0d0e">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" href="icons/icon-192-v2.png">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon-v2.png">
@@ -48,7 +48,7 @@
 
 <div id="app">
   <header class="top">
-    <img src="assets/wordmark-v2.png" alt="AfroBox" class="wordmark">
+    <div class="brand"><img src="assets/wordmark-pill.png" alt="AfroBox" class="wordmark"></div>
   </header>
 
   <main id="views">
@@ -83,8 +83,6 @@
           <svg class="ic sm"><use href="#i-vol"/></svg>
         </div>
         <p class="vol-note" id="volNote" hidden>Use your device’s volume buttons.</p>
-
-        <button class="pill glass" id="btnQueue"><svg class="ic sm"><use href="#i-queue"/></svg><span id="queueLabel">Up next</span></button>
       </div>
     </section>
 
@@ -137,11 +135,6 @@
 
 <input type="file" id="fileIn" accept="audio/*,.mp3,.flac,.wav,.m4a" multiple hidden>
 <input type="file" id="dirIn" webkitdirectory directory multiple hidden>
-
-<dialog id="queueSheet" class="sheet">
-  <div class="sheet-head"><h3>Up next</h3><button class="ctl small" id="queueClose" aria-label="Close"><svg class="ic sm"><use href="#i-plus" style="transform-origin:center;transform:rotate(45deg)"/></svg></button></div>
-  <ol id="queueList" class="list"></ol>
-</dialog>
 
 <dialog id="confirm" class="sheet">
   <form method="dialog">
