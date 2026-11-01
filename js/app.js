@@ -6,7 +6,7 @@ const $ = (s) => document.querySelector(s);
 const $$ = (s) => [...document.querySelectorAll(s)];
 const AUDIO_EXT = ['mp3', 'flac', 'wav', 'm4a'];
 const MIME = { mp3: 'audio/mpeg', flac: 'audio/flac', wav: 'audio/wav', m4a: 'audio/mp4' };
-const PLACEHOLDER = 'assets/disc.png';
+const PLACEHOLDER = 'assets/disc-tile.png';
 
 let tracks = [];
 let query = '';
