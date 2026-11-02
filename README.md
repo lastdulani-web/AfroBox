@@ -1,13 +1,15 @@
-# AfroBox
+# DeciBox
 
 Minimal, offline-first music player (PWA). Import your own MP3, FLAC, WAV and M4A files; they are stored on the device in IndexedDB and play with no internet. Lock-screen and notification controls work through the MediaSession API.
 
 Developed by Last Dulani.
 
+(Formerly AfroBox. The internal storage name is still `afrobox` on purpose, so music already imported stays in the library after the rename.)
+
 ## Files
 
 ```
-AfroBox/
+DeciBox/
 ├── index.html              app shell, splash, icon sprite
 ├── manifest.webmanifest    install info (name, icons, colours)
 ├── sw.js                   service worker (offline app shell)
@@ -24,10 +26,10 @@ AfroBox/
 
 A PWA must be served over HTTPS. It will not install by double-clicking index.html.
 
-1. Create a new GitHub repository, e.g. `afrobox`.
+1. Create a new GitHub repository, e.g. `decibox`.
 2. Upload everything inside this folder (index.html at the top level of the repo, not inside a subfolder).
 3. Repository Settings → Pages → Source: "Deploy from a branch" → `main` / `(root)` → Save.
-4. After a minute your app is live at `https://<your-username>.github.io/afrobox/`.
+4. After a minute your app is live at `https://<your-username>.github.io/decibox/`.
 
 All paths in the app are relative, so it works in a sub-folder like this without changes.
 
@@ -41,11 +43,11 @@ Open it once while online so the app shell is cached. After that, turn on airpla
 
 ## Add music
 
-Library → Import songs (pick files) or Import folder. On iPhone, tap Browse in the picker to reach "On My iPhone" or iCloud Drive. Imported songs are copies stored inside AfroBox; deleting the original file does not affect them.
+Library → Import songs (pick files) or Import folder. On iPhone, tap Browse in the picker to reach "On My iPhone" or iCloud Drive. Imported songs are copies stored inside DeciBox; deleting the original file does not affect them.
 
 ## Updating the app
 
-Edit your files, then change `VERSION` in `sw.js` (e.g. `afrobox-v2`) and upload again. Phones fetch the new version on their next launch (close and reopen the app once or twice).
+Edit your files, then change `VERSION` in `sw.js` (e.g. `decibox-v8`) and upload again. Phones fetch the new version on their next launch (close and reopen the app once or twice).
 
 ## Good to know
 

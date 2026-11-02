@@ -1,4 +1,4 @@
-// AfroBox playback engine: one <audio> element, a queue, shuffle/repeat,
+// DeciBox playback engine: one <audio> element, a queue, shuffle/repeat,
 // MediaSession (lock screen / notification controls) and resume-where-you-left-off.
 import * as db from './db.js';
 
@@ -189,11 +189,11 @@ export function clearAll() {
 /* ---------- MediaSession ---------- */
 function updateSession(t) {
   if (!('mediaSession' in navigator)) return;
-  const art = coverURL(t) || new URL('icons/icon-512-v2.png', document.baseURI).href;
+  const art = coverURL(t) || new URL('icons/icon-512-v3.png', document.baseURI).href;
   navigator.mediaSession.metadata = new MediaMetadata({
     title: t.title,
     artist: t.artist || 'Unknown artist',
-    album: t.album || 'AfroBox',
+    album: t.album || 'DeciBox',
     artwork: [{ src: art, sizes: '512x512', type: t.cover ? t.cover.type : 'image/png' }],
   });
 }

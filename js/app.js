@@ -6,7 +6,7 @@ const $ = (s) => document.querySelector(s);
 const $$ = (s) => [...document.querySelectorAll(s)];
 const AUDIO_EXT = ['mp3', 'flac', 'wav', 'm4a'];
 const MIME = { mp3: 'audio/mpeg', flac: 'audio/flac', wav: 'audio/wav', m4a: 'audio/mp4' };
-const PLACEHOLDER = 'assets/disc-tile.png';
+const PLACEHOLDER = 'assets/disc-tile-v3.png';
 
 let tracks = [];
 let query = '';
@@ -109,7 +109,7 @@ $('#list').addEventListener('click', async (e) => {
   const id = +row.dataset.id;
   if (e.target.closest('.row-del')) {
     const t = tracks.find((x) => x.id === id);
-    if (await ask('Delete this song?', `“${t.title}” will be removed from AfroBox. The original file on your device isn’t touched.`)) {
+    if (await ask('Delete this song?', `“${t.title}” will be removed from DeciBox. The original file on your device isn’t touched.`)) {
       await db.deleteTrack(id);
       await P.removeTrack(id);
       await refreshLibrary();
@@ -125,7 +125,7 @@ $('#list').addEventListener('click', async (e) => {
 $('#search').addEventListener('input', (e) => { query = e.target.value; renderLibrary(); });
 
 $('#btnClear').addEventListener('click', async () => {
-  if (await ask('Clear your library?', `All ${tracks.length} songs will be removed from AfroBox. Your original files aren’t touched.`, 'Clear library')) {
+  if (await ask('Clear your library?', `All ${tracks.length} songs will be removed from DeciBox. Your original files aren’t touched.`, 'Clear library')) {
     await db.clearAll();
     P.clearAll();
     await refreshLibrary();
@@ -195,7 +195,7 @@ function renderTrack() {
   const img = $('#artImg');
   img.src = art || PLACEHOLDER;
   img.classList.toggle('ph', !art);
-  img.alt = art ? `Cover art for ${t.title}` : 'AfroBox';
+  img.alt = art ? `Cover art for ${t.title}` : 'DeciBox';
   const bg = $('#bgart');
   bg.style.backgroundImage = art ? `url("${art}")` : '';
   bg.classList.toggle('on', !!art);
@@ -204,7 +204,7 @@ function renderTrack() {
   $('#miniArtist').textContent = t ? (t.artist || 'Unknown artist') : '';
   $('#miniArt').src = art || PLACEHOLDER;
   seekEl.disabled = !t;
-  document.title = t ? `${t.title} · AfroBox` : 'AfroBox';
+  document.title = t ? `${t.title} · DeciBox` : 'DeciBox';
   renderTime();
   markRows();
 }

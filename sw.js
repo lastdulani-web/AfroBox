@@ -1,13 +1,13 @@
-// AfroBox service worker: cache the app shell so the app opens fully offline.
+// DeciBox service worker: cache the app shell so the app opens fully offline.
 // Bump VERSION whenever you change any file, so phones pick up the update.
-const VERSION = 'afrobox-v6';
+const VERSION = 'decibox-v7';
 const ASSETS = [
   './', 'index.html', 'manifest.webmanifest',
   'css/styles.css',
   'fonts/Outfit-Light.ttf', 'fonts/Outfit-Regular.ttf', 'fonts/Outfit-Medium.ttf', 'fonts/Outfit-SemiBold.ttf', 'fonts/Outfit-Bold.ttf', 'fonts/Outfit-ExtraBold.ttf',
   'js/app.js', 'js/db.js', 'js/meta.js', 'js/player.js',
-  'assets/logo-full-v2.png', 'assets/wordmark-pill.png', 'assets/disc-tile.png',
-  'icons/icon-192-v2.png', 'icons/icon-512-v2.png', 'icons/icon-maskable-512-v2.png', 'icons/apple-touch-icon-v2.png'
+  'assets/logo-full-v3.png', 'assets/wordmark-pill-v2.png', 'assets/disc-tile-v3.png',
+  'icons/icon-192-v3.png', 'icons/icon-512-v3.png', 'icons/icon-maskable-512-v3.png', 'icons/apple-touch-icon-v3.png'
 ];
 
 self.addEventListener('install', (e) => {
