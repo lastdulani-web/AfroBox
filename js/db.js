@@ -1,4 +1,4 @@
-// DeciBox storage: IndexedDB with two stores.
+// Pulse storage: IndexedDB with two stores.
 //   tracks -> small metadata records (title, artist, cover thumbnail...)
 //   files  -> the audio Blob itself, keyed by track id
 const DB_NAME = 'afrobox';

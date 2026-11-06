@@ -1,4 +1,4 @@
-// DeciBox playback engine: one <audio> element, a queue, shuffle/repeat,
+// Pulse playback engine: one <audio> element, a queue, shuffle/repeat,
 // MediaSession (lock screen / notification controls) and resume-where-you-left-off.
 import * as db from './db.js';
 
@@ -189,11 +189,11 @@ export function clearAll() {
 /* ---------- MediaSession ---------- */
 function updateSession(t) {
   if (!('mediaSession' in navigator)) return;
-  const art = coverURL(t) || new URL('icons/icon-512-v3.png', document.baseURI).href;
+  const art = coverURL(t) || new URL('icons/icon-512-v4.png', document.baseURI).href;
   navigator.mediaSession.metadata = new MediaMetadata({
     title: t.title,
     artist: t.artist || 'Unknown artist',
-    album: t.album || 'DeciBox',
+    album: t.album || 'Pulse Media Player',
     artwork: [{ src: art, sizes: '512x512', type: t.cover ? t.cover.type : 'image/png' }],
   });
 }

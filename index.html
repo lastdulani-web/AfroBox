@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>DeciBox</title>
-<meta name="description" content="DeciBox: a minimal offline music player for your own audio collection.">
+<title>Pulse Media Player</title>
+<meta name="description" content="Pulse: a minimal offline music player for your own audio collection.">
 <meta name="theme-color" content="#0d0d0e">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" type="image/png" href="icons/icon-192-v3.png">
-<link rel="apple-touch-icon" href="icons/apple-touch-icon-v3.png">
+<link rel="icon" type="image/png" href="icons/icon-192-v4.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon-v4.png">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="DeciBox">
+<meta name="apple-mobile-web-app-title" content="Pulse">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -35,12 +35,15 @@
   <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
   <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
   <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14M10 11v6M14 11v6"/></symbol>
+  <symbol id="i-cog" viewBox="0 0 24 24"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
   <symbol id="i-note" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13M9 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM21 16a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/></symbol>
 </svg>
 
 <!-- Splash (2 seconds) -->
-<div id="splash" role="img" aria-label="DeciBox. Developed by Last Dulani">
-  <img src="assets/logo-full-v3.png" alt="" width="380">
+<div id="splash" role="img" aria-label="Pulse Media Player. Developed by Last Dulani">
+  <img src="assets/pulse-splash-v4.png" alt="" width="380">
   <p>Developed by Last Dulani</p>
 </div>
 
@@ -48,7 +51,12 @@
 
 <div id="app">
   <header class="top">
-    <div class="brand"><img src="assets/wordmark-pill-v2.png" alt="DeciBox" class="wordmark"></div>
+    <div class="brand"><img src="assets/pulse-logo-v4.png" alt="Pulse Media Player" class="wordmark"></div>
+    <div class="hdr-icons" aria-hidden="true">
+      <span class="hicon glass"><svg class="ic"><use href="#i-cog"/></svg></span>
+      <span class="hicon glass"><svg class="ic"><use href="#i-info"/></svg></span>
+      <span class="hicon glass"><svg class="ic"><use href="#i-sun"/></svg></span>
+    </div>
   </header>
 
   <main id="views">
@@ -56,7 +64,7 @@
     <section class="view active" id="view-now" aria-label="Now Playing">
       <div class="np">
         <div class="art glass">
-          <img id="artImg" alt="DeciBox" class="ph" src="assets/disc-tile-v3.png">
+          <img id="artImg" alt="Pulse Media Player" class="ph" src="assets/art-tile-v4.png">
         </div>
 
         <div class="titles">
@@ -120,7 +128,7 @@
   <!-- Mini player (shown on Library) -->
   <div class="mini glass" id="mini" hidden>
     <button class="mini-main" id="miniMain" aria-label="Open Now Playing">
-      <img id="miniArt" alt="" src="assets/disc-tile-v3.png">
+      <img id="miniArt" alt="" src="assets/art-tile-v4.png">
       <span class="meta"><b id="miniTitle"></b><i id="miniArtist"></i></span>
     </button>
     <button class="ctl js-play" id="miniPlay" aria-label="Play"><svg class="ic"><use href="#i-play"/></svg></button>

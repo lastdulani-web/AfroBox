@@ -1,13 +1,13 @@
-// DeciBox service worker: cache the app shell so the app opens fully offline.
+// Pulse service worker: cache the app shell so the app opens fully offline.
 // Bump VERSION whenever you change any file, so phones pick up the update.
-const VERSION = 'decibox-v7';
+const VERSION = 'pulse-v8';
 const ASSETS = [
   './', 'index.html', 'manifest.webmanifest',
   'css/styles.css',
   'fonts/Outfit-Light.ttf', 'fonts/Outfit-Regular.ttf', 'fonts/Outfit-Medium.ttf', 'fonts/Outfit-SemiBold.ttf', 'fonts/Outfit-Bold.ttf', 'fonts/Outfit-ExtraBold.ttf',
   'js/app.js', 'js/db.js', 'js/meta.js', 'js/player.js',
-  'assets/logo-full-v3.png', 'assets/wordmark-pill-v2.png', 'assets/disc-tile-v3.png',
-  'icons/icon-192-v3.png', 'icons/icon-512-v3.png', 'icons/icon-maskable-512-v3.png', 'icons/apple-touch-icon-v3.png'
+  'assets/pulse-splash-v4.png', 'assets/pulse-logo-v4.png', 'assets/art-tile-v4.png',
+  'icons/icon-192-v4.png', 'icons/icon-512-v4.png', 'icons/icon-maskable-512-v4.png', 'icons/apple-touch-icon-v4.png'
 ];
 
 self.addEventListener('install', (e) => {
